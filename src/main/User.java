@@ -4,25 +4,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public abstract class User {
-    private String id;
     private String name;
 
     public User() {
-        this.id = "";
         this.name = "";
     }
 
     public User(String id, String name) {
-        this.id = id;
         this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -33,11 +22,11 @@ public abstract class User {
         this.name = name;
     }
 
-    public void writeData(Reservation reservationInfo){
+    public void writeData(House houseInfo){
         FileWriter f = null;
         try {
             f = new FileWriter("customerData.txt", true);
-            f.append(reservationInfo.toString() + "\n");
+            f.append(houseInfo.toString() + "\n");
             f.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,7 +39,5 @@ public abstract class User {
         }
     }
 
-    public abstract Reservation searchRoomNumber(int roomNumber);
-
-    public abstract Reservation searchReservationName(String name);
+    public abstract House searchHouse(int id);
 }

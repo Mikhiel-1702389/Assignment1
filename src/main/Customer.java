@@ -10,12 +10,8 @@ public class Customer extends User {
     }
 
     @Override
-    public Reservation searchRoomNumber(int roomNumber) {
+    public House searchHouse(int id) {
         return null;
     }
 
-    @Override
-    public Reservation searchReservationName(String name) {
-        return null;
-    }
 }
